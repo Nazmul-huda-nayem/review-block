@@ -244,14 +244,15 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			activeRatingColor !== undefined &&
 			activeRatingColor !== '' &&
 			`.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
-			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
+			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before,
+			.${uniqueId} .rate-select-layer span {
 				color: ${activeRatingColor};
 			}`
 		}
 		${
 			inactiveRatingColor !== undefined &&
 			inactiveRatingColor !== '' &&
-			`.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
+			`.${uniqueId} .rate-base-layer span
 			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
 				color: ${inactiveRatingColor};
 			}`
