@@ -13,7 +13,7 @@
  *
  * @package           @wordpress/create-block 
  */
-// nayem
+
 // Stop Direct Access 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
