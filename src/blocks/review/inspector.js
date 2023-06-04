@@ -42,7 +42,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 		descriptionHoverColor,
 		designationHoverColor,
 		boxBgHoverColor,
-		ratingColor,
+		activeRatingColor,
+		inactiveRatingColor,
 		textAlign,
 	} = attributes;
 	const objAttrs = { attributes, setAttributes, objAttributes };
@@ -275,9 +276,15 @@ const Inspector = ({ attributes, setAttributes }) => {
 					initialOpen={false}
 				>
 					<ColorControl
-						label={__('Rating Color', 'bdt-review-blocks')}
-						color={ratingColor}
-						colorName="ratingColor"
+						label={__('Active Rating Color', 'bdt-review-blocks')}
+						color={activeRatingColor}
+						colorName="activeRatingColor"
+						onChange={setAttributes}
+					/>
+					<ColorControl
+						label={__('Inactive Rating Color', 'bdt-review-blocks')}
+						color={inactiveRatingColor}
+						colorName="inactiveRatingColor"
 						onChange={setAttributes}
 					/>
 					<ResRangleControl

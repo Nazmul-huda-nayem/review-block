@@ -38,7 +38,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		designationHoverColor,
 		boxBgColor,
 		boxBgHoverColor,
-		ratingColor,
+		activeRatingColor,
+		inactiveRatingColor,
 		textAlign,
 	} = attributes;
 
@@ -170,6 +171,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				: ' '
 		}
 		.${uniqueId} .bdt-content {
+			align-items: ${textAlign};
 			text-align: ${textAlign};
 		}
 		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-name {
@@ -239,17 +241,32 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			}`
 		}
 		${
-			ratingColor !== undefined &&
-			ratingColor !== '' &&
+			activeRatingColor !== undefined &&
+			activeRatingColor !== '' &&
 			`.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
 			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
-				color: ${ratingColor};
+				color: ${activeRatingColor};
 			}`
 		}
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-disabled,
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
-			font-size: ${deskRatingSize}${ratingUnit};
+		${
+			inactiveRatingColor !== undefined &&
+			inactiveRatingColor !== '' &&
+			`.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
+			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
+				color: ${inactiveRatingColor};
+			}`
+		}
+	
+		${
+			deskRatingSize !== undefined && deskRatingSize !== ''
+				? `.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
+		 		   .${uniqueId} .bdt-review-icon .react-rater-star.is-disabled,
+		 		   .${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before,
+		 		   .${uniqueId} .rate-base-layer span,
+		 		   .${uniqueId} .rate-select-layer span {
+				  font-size: ${deskRatingSize}${ratingUnit};
+			   }`
+				: ' '
 		}
 	`;
 	const tabStyles = `

@@ -58,7 +58,10 @@ const attributes = {
 	boxBgHoverColor: {
 		type: 'string',
 	},
-	ratingColor: {
+	activeRatingColor: {
+		type: 'string',
+	},
+	inactiveRatingColor: {
 		type: 'string',
 	},
 	textAlign: {

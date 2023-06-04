@@ -1,7 +1,7 @@
 const aligns = [
 	{
 		icon: 'alignleft',
-		value: 'left',
+		value: 'start',
 	},
 	{
 		icon: 'aligncenter',
@@ -9,12 +9,8 @@ const aligns = [
 	},
 	{
 		icon: 'alignright',
-		value: 'right',
-	},
-	{
-		icon: 'justify',
-		value: 'justify',
-	},
+		value: 'end',
+	}
 ];
 
 export default aligns;
