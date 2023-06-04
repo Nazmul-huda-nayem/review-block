@@ -1,0 +1,147 @@
+/*
+* Style Works for Editor Only
+*/
+
+.bdt-tab-panel {
+	margin-top: 20px;
+	.bdt-tab {
+		width: 100%;
+		background: #dbe8e8;
+		justify-content: center;
+		border-right: 2px solid #cfc2c2;
+		border-top: 2px solid #0000;
+		&:hover {
+			color: unset;
+		}
+		&.active-tab {
+			border-top: 2px solid #9e6e01;
+			background: #d4cece;
+		}
+	}
+}
+
+.wp-block-bdt-review {
+	display: inherit;
+	.block-editor-block-list__layout {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin: auto;
+		gap: 20px;
+		min-width: 1px;
+	}
+
+	.block-editor-button-block-appender {
+		&::before {
+			content: "Add Item";
+			font-weight: 600;
+			font-size: 16px;
+		}
+		svg {
+			display: none;
+		}
+		.bdt-review-icon {
+			color: unset;
+		}
+	}
+
+	.wp-block-bdt-review-item {
+		min-width: 1px;
+	}
+
+	.react-rater-star.is-active,
+	.bdt-review-icon .react-rater-star.is-active-half::before {
+		font-size: 14px;
+		color: #ff9a00;
+	}
+}
+
+.bdt-res-rangle-control {
+	.res-btn {
+		display: flex;
+		gap: 5px;
+		align-items: center;
+		justify-content: flex-start;
+		.components-button {
+			justify-content: center;
+			min-width: 36px;
+			padding: 0px;
+			height: 16px;
+			min-width: 1px;
+			width: 20px;
+			background: #fff;
+			color: #9b9a9a;
+			border: 1px solid #ddd;
+			box-shadow: none;
+			span {
+				font-size: 11px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
+				margin: 0;
+			}
+			&:hover {
+				background: #0000;
+				color: #000;
+			}
+			&.is-primary {
+				color: #000;
+				background: #dfdfdf;
+				&:focus:not(:disabled) {
+					box-shadow: none;
+				}
+				&:active:not(:disabled) {
+					background-color: #ddd;
+					color: #000;
+					border: none;
+				}
+			}
+			&.is-secondary {
+				&:hover:not(:disabled) {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	.units-wrapper {
+		.components-button {
+			border: 1px solid #ddd;
+			padding-bottom: 2px;
+			font-size: 11px;
+			height: 15px;
+			padding: 0 4px 2px;
+			&.is-secondary {
+				box-shadow: none;
+				&:hover:not(:disabled) {
+					box-shadow: none;
+				}
+			}
+			&.is-primary {
+				background: #e8dede;
+				color: #000;
+				&:hover:not(:disabled) {
+					background: #fff;
+					color: #000;
+				}
+			}
+		}
+	}
+}
+
+.bdt-color-control-wrapper {
+	.components-base-control__label {
+		text-transform: capitalize;
+		font-size: 13px;
+	}
+}
+
+.res-controls .components-base-control {
+	margin-bottom: 0px !important;
+}
+.block-editor-button-block-appender.components-button {
+	padding: 12px;
+	border-radius: 5px;
+	background: #ddd;
+}

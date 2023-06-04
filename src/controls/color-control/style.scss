@@ -1,0 +1,32 @@
+.bdt-color-control-wrapper {
+	.bdt-color-control {
+		line-height: 1;
+		border: navajowhite;
+		background: #0000;
+		cursor: pointer;
+		&.components-button:focus:not(:disabled) {
+			box-shadow: none;
+		}
+		.component-color-indicator {
+			background-image: linear-gradient(45deg, #ddd 25%, transparent 0),
+				linear-gradient(-45deg, #ddd 25%, transparent 0),
+				linear-gradient(45deg, transparent 75%, #ddd 0),
+				linear-gradient(-45deg, transparent 75%, #ddd 0);
+			background-size: 10px 10px;
+			background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+		}
+	}
+}
+.bdt-clear-btn {
+	background: #ddd;
+	background: #fff5f5;
+	border: 1px solid #ddd;
+	margin-left: 15px;
+	margin-bottom: 7px;
+	line-height: 1;
+	font-weight: 500;
+	padding: 5px 14px 7px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #0000002b;
+	cursor: pointer;
+}

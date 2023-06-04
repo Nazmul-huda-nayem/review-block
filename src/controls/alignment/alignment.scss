@@ -1,0 +1,19 @@
+
+.bdt-Alignment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    .bdt-label {
+        margin: 0;
+    }
+    .bdt-single-icon {
+        background: #0000;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        &.active {
+            background: #eae5e5;
+        }
+    }
+}
+

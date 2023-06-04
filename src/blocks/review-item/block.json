@@ -1,0 +1,18 @@
+{
+	"apiVersion": 2,
+	"name": "bdt/review-item",
+	"version": "0.1.0",
+	"title": "Review Item",
+	"category": "bdt-blocks",
+	"description": "Simple bootstrap block description.",
+	"parent": ["bdt/review"],
+	"usesContext": ["bdt/style"],
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"textdomain": "bdt-review-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

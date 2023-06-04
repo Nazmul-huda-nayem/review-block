@@ -1,0 +1,1 @@
+wp.hooks.addFilter("blocks.registerBlockType","bdt/attribute/resMode",(function(t,e){return e.includes("bdt/")&&(t.attributes={...t.attributes,resMode:{type:"string",default:"Desktop"}}),t}));
