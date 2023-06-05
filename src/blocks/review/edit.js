@@ -227,35 +227,34 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		
 		${
-			boxBgColor !== undefined &&
-			boxBgColor !== '' &&
-			`.${uniqueId} .wp-block-bdt-review-item {
+			boxBgColor !== undefined && boxBgColor !== ''
+				? `.${uniqueId} .wp-block-bdt-review-item {
 				background: ${boxBgColor};
 			}`
+				: ''
 		}
 		${
-			boxBgHoverColor !== undefined &&
-			boxBgHoverColor !== '' &&
-			`.${uniqueId} .wp-block-bdt-review-item:hover {
+			boxBgHoverColor !== undefined && boxBgHoverColor !== ''
+				? `.${uniqueId} .wp-block-bdt-review-item:hover {
 				background: ${boxBgHoverColor};
 			}`
+				: ''
 		}
 		${
-			activeRatingColor !== undefined &&
-			activeRatingColor !== '' &&
-			`.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
-			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before,
-			.${uniqueId} .rate-select-layer span {
+			activeRatingColor !== undefined && activeRatingColor !== ''
+				? `.${uniqueId}.wp-block-bdt-review .react-rater-star.is-active,
+			.${uniqueId}.wp-block-bdt-review .react-rater-star.is-active-half::before,
+			.${uniqueId}.wp-block-bdt-review .rate-select-layer span {
 				color: ${activeRatingColor};
 			}`
+				: ''
 		}
 		${
-			inactiveRatingColor !== undefined &&
-			inactiveRatingColor !== '' &&
-			`.${uniqueId} .rate-base-layer span
-			.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
+			inactiveRatingColor !== undefined && inactiveRatingColor !== ''
+				? `.${uniqueId} .react-rater-star.is-disabled, .${uniqueId} .rate-base-layer span {
 				color: ${inactiveRatingColor};
 			}`
+				: ''
 		}
 	
 		${
