@@ -51,8 +51,11 @@
 
 	.react-rater-star.is-active,
 	.bdt-review-icon .react-rater-star.is-active-half::before {
-		font-size: 14px;
+		font-size: 20px;
 		color: #ff9a00;
+	}
+	.react-rater-star.is-disabled {
+		font-size: 20px;
 	}
 }
 

@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, CardDivider } from '@wordpress/components';
 const { Fragment } = wp.element;
 
@@ -22,7 +22,6 @@ const {
 	NAME_FONT_SIZE,
 	DESG_FONT_SIZE,
 	DESC_FONT_SIZE,
-	RATING_SIZE,
 	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
@@ -286,14 +285,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 						color={inactiveRatingColor}
 						colorName="inactiveRatingColor"
 						onChange={setAttributes}
-					/>
-					<ResRangleControl
-						label={__('Rating Size', 'bdt-review-blocks')}
-						controlName={RATING_SIZE}
-						objAttrs={objAttrs}
-						noUnits={false}
-						min={1}
-						max={100}
 					/>
 				</PanelBody>
 			</Fragment>

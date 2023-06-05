@@ -19,7 +19,6 @@ const {
 	NAME_FONT_SIZE,
 	DESC_FONT_SIZE,
 	DESG_FONT_SIZE,
-	RATING_SIZE,
 	IMAGE_SIZE,
 	ITEM_PADDING,
 	ITEM_BORDER_RADIUS,
@@ -95,11 +94,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const tabDescFont = attributes[`${DESC_FONT_SIZE}TabRange`];
 	const mobDescFont = attributes[`${DESC_FONT_SIZE}MobRange`];
 	const descFontUnit = attributes[`${DESC_FONT_SIZE}Unit`];
-	// Rating Size
-	const deskRatingSize = attributes[`${RATING_SIZE}DeskRange`];
-	const tabRatingSize = attributes[`${RATING_SIZE}TabRange`];
-	const mobRatingSize = attributes[`${RATING_SIZE}MobRange`];
-	const ratingUnit = attributes[`${RATING_SIZE}Unit`];
 	// Image Size
 	const deskImageSize = attributes[`${IMAGE_SIZE}DeskRange`];
 	const tabImageSize = attributes[`${IMAGE_SIZE}TabRange`];
@@ -243,30 +237,19 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		${
 			activeRatingColor !== undefined && activeRatingColor !== ''
 				? `.${uniqueId}.wp-block-bdt-review .react-rater-star.is-active,
-			.${uniqueId}.wp-block-bdt-review .react-rater-star.is-active-half::before,
-			.${uniqueId}.wp-block-bdt-review .rate-select-layer span {
+				   .${uniqueId}.wp-block-bdt-review .react-rater-star.is-active-half::before,
+			       .${uniqueId}.wp-block-bdt-review .rate-select-layer span {
 				color: ${activeRatingColor};
 			}`
 				: ''
 		}
 		${
 			inactiveRatingColor !== undefined && inactiveRatingColor !== ''
-				? `.${uniqueId} .react-rater-star.is-disabled, .${uniqueId} .rate-base-layer span {
+				? `.${uniqueId} .react-rater-star.is-disabled, 
+				   .${uniqueId}.wp-block-bdt-review .rate-base-layer span {
 				color: ${inactiveRatingColor};
 			}`
 				: ''
-		}
-	
-		${
-			deskRatingSize !== undefined && deskRatingSize !== ''
-				? `.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
-		 		   .${uniqueId} .bdt-review-icon .react-rater-star.is-disabled,
-		 		   .${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before,
-		 		   .${uniqueId} .rate-base-layer span,
-		 		   .${uniqueId} .rate-select-layer span {
-				  font-size: ${deskRatingSize}${ratingUnit};
-			   }`
-				: ' '
 		}
 	`;
 	const tabStyles = `
@@ -300,11 +283,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
 			font-size: ${tabDescFont}${descFontUnit};
 		}
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-disabled,
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
-			font-size: ${tabRatingSize}${ratingUnit};
-		}
 	`;
 	const mobStyles = `
 		.${uniqueId} .block-editor-block-list__layout,
@@ -336,11 +314,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 		.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
 			font-size: ${mobDescFont}${descFontUnit};
-		}
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-active,
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-disabled,
-		.${uniqueId} .bdt-review-icon .react-rater-star.is-active-half::before {
-			font-size: ${mobRatingSize}${ratingUnit};
 		}
 	`;
 

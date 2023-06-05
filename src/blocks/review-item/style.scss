@@ -17,7 +17,7 @@
 	.bdt-content {
 		display: flex;
 		flex-direction: column;
-		margin-top: 30px;
+		margin-top: 15px;
 		.bdt-name {
 			font-size: 20px;
 			margin-bottom: 3px;
@@ -32,16 +32,18 @@
 			font-size: 13px;
 			text-transform: capitalize;
 			color: #5f606f;
-			margin: 0 0 20px;
+			margin: 8px 0 20px;
 		}
 		.bdt-desc {
 			font-size: 15px;
 			color: #6b7285;
 			line-height: 1.3;
+			margin-top: -10px;
+    		margin-bottom: 28px;
 		}
-		.bdt-review-icon {
-			font-size: 14px;
-			color: #ffd603;
+		.bdt-review-icon span{
+			font-size: 20px;
+			color: #ff9a00;
 		}
 	}
 	&.style-1 {
@@ -99,10 +101,6 @@
 			.bdt-designation,
 			.bdt-desc {
 				color: #fff;
-			}
-			.bdt-review-icon {
-				font-size: 14px;
-				color: #ffd603;
 			}
 		}
 		&:hover .bdt-content {

@@ -10,11 +10,9 @@ const {
 	NAME_FONT_SIZE,
 	DESC_FONT_SIZE,
 	DESG_FONT_SIZE,
-	RATING_SIZE,
 	IMAGE_SIZE,
 	ITEM_BORDER_RADIUS,
 	ITEM_PADDING,
-	ITEM_BACKGROUND_COLOR,
 } = constants;
 
 const attributes = {
@@ -114,14 +112,6 @@ const attributes = {
 			[`${DESC_FONT_SIZE}DeskRange`]: 15,
 			[`${DESC_FONT_SIZE}TabRange`]: 15,
 			[`${DESC_FONT_SIZE}MobRange`]: 15,
-		},
-	}),
-	...generateResRangleControlAttributes({
-		controlName: RATING_SIZE,
-		defaults: {
-			[`${RATING_SIZE}DeskRange`]: 14,
-			[`${RATING_SIZE}TabRange`]: 14,
-			[`${RATING_SIZE}MobRange`]: 14,
 		},
 	}),
 	...generateResRangleControlAttributes({
