@@ -4,9 +4,6 @@
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, MediaUpload } from '@wordpress/block-editor';
 import {
-	Card,
-	CardHeader,
-	CardBody,
 	ToggleControl,
 	RangeControl,
 	TextControl,
@@ -15,6 +12,7 @@ import {
 	Button,
 	BaseControl,
 	SelectControl,
+	CardDivider,
 } from '@wordpress/components';
 const { Fragment } = wp.element;
 
@@ -36,50 +34,57 @@ const Inspector = ({ attributes, setAttributes }) => {
 				initialOpen={true}
 			>
 				<TextControl
-					label={__('Reviewer Name', 'bdt-review-blocks')}
+					label={__('Name', 'bdt-review-blocks')}
 					value={clientName}
 					onChange={(value) =>
 						setAttributes({
 							clientName: value,
 						})
 					}
+					placeholder={__('Name…', 'bdt-review-blocks')}
 				/>
 				<SelectControl
-					label={__('Select Title Tag', 'bdt-review-blocks')}
+					label={__('Select Tag', 'bdt-review-blocks')}
 					options={[
-						{ label: __('H1', 'bdt-review-blocks'), value: 'h1' },
-						{ label: __('H2', 'bdt-review-blocks'), value: 'h2' },
-						{ label: __('H3', 'bdt-review-blocks'), value: 'h3' },
-						{ label: __('H4', 'bdt-review-blocks'), value: 'h4' },
-						{ label: __('H5', 'bdt-review-blocks'), value: 'h5' },
-						{ label: __('H6', 'bdt-review-blocks'), value: 'h6' },
+						{ label: 'H1', value: 'h1' },
+						{ label: 'H2', value: 'h2' },
+						{ label: 'H3', value: 'h3' },
+						{ label: 'H4', value: 'h4' },
+						{ label: 'H5', value: 'h5' },
+						{ label: 'H6', value: 'h6' },
+						{ label: 'P', value: 'p' },
 					]}
 					onChange={(value) => {
 						setAttributes({ titleTag: value });
 					}}
 					value={titleTag}
 				/>
+				<CardDivider />
 				<TextControl
-					label={__('Reviewer Designation', 'bdt-review-blocks')}
+					label={__('Designation', 'bdt-review-blocks')}
 					value={clientDesg}
 					onChange={(value) =>
 						setAttributes({
 							clientDesg: value,
 						})
 					}
+					placeholder={__('Designation…', 'bdt-review-blocks')}
 				/>
+				<CardDivider />
 				<TextareaControl
-					label={__('Reviewer Comment', 'bdt-review-blocks')}
+					label={__('Message', 'bdt-review-blocks')}
 					value={clientComment}
 					onChange={(value) =>
 						setAttributes({
 							clientComment: value,
 						})
 					}
+					placeholder={__('Message…', 'bdt-review-blocks')}
 				/>
+				<CardDivider />
 				<BaseControl
 					id="reviewer-photo"
-					label={__('Reviewer Photo', 'bdt-review-blocks')}
+					label={__('Photo', 'bdt-review-blocks')}
 				/>
 				{photo ? (
 					<div className="bdt-image-wrap">
@@ -101,44 +106,42 @@ const Inspector = ({ attributes, setAttributes }) => {
 							<Button
 								onClick={open}
 								variant="secondary"
-								icon={'cloud-upload'}
+								icon="cloud-upload"
 							>
-								Upload Client Image
+								{__('Upload Photo', 'bdt-review-blocks')}
 							</Button>
 						)}
 					/>
 				)}
 			</PanelBody>
-			<Card>
-				<CardHeader>
-					<strong>{__('Client Rating', 'bdt-review-blocks')}</strong>
-				</CardHeader>
-				<CardBody>
-					<ToggleControl
-						label={__('Show Rating', 'bdt-review-blocks')}
-						checked={showRating}
-						onChange={() =>
-							setAttributes({
-								showRating: !showRating,
-							})
-						}
-					/>
-					{showRating && (
-						<Fragment>
-							<RangeControl
-								label={__('Rating', 'bdt-review-blocks')}
-								value={rating}
-								onChange={(value) =>
-									setAttributes({ rating: value })
-								}
-								min={1}
-								max={5}
-								step={0.1}
-							/>
-						</Fragment>
-					)}
-				</CardBody>
-			</Card>
+			<PanelBody
+				title={__('Rating', 'bdt-review-blocks')}
+				initialOpen={false}
+			>
+				<ToggleControl
+					label={__('Show Rating', 'bdt-review-blocks')}
+					checked={showRating}
+					onChange={() =>
+						setAttributes({
+							showRating: !showRating,
+						})
+					}
+				/>
+				{showRating && (
+					<Fragment>
+						<RangeControl
+							label={__('Rating', 'bdt-review-blocks')}
+							value={rating}
+							onChange={(value) =>
+								setAttributes({ rating: value })
+							}
+							min={1}
+							max={5}
+							step={0.1}
+						/>
+					</Fragment>
+				)}
+			</PanelBody>
 		</InspectorControls>
 	);
 };

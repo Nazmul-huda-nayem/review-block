@@ -3,13 +3,7 @@
 */
 
 .wp-block-bdt-review {
-	max-width: 1200px !important;
-}
-
-.wp-block-bdt-review {
-	position: relative;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	margin: auto;
 	gap: 20px;
 }

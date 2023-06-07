@@ -55,9 +55,12 @@ export default function Edit(props) {
 							render={({ open }) => (
 								<ToolbarButton
 									onClick={open}
-									label="Edit"
+									label={__(
+										'Edit Photo',
+										'bdt-review-blocks'
+									)}
 									icon="edit"
-								></ToolbarButton>
+								/>
 							)}
 						/>
 					</ToolbarGroup>
@@ -76,7 +79,7 @@ export default function Edit(props) {
 									<img
 										className="bdt-img"
 										src={photo.url}
-										alt={photo.alt ? photo.alt : clientName}
+										alt={photo.alt || clientName}
 									/>
 								</div>
 							) : (
@@ -92,9 +95,12 @@ export default function Edit(props) {
 										<Button
 											onClick={open}
 											variant="secondary"
-											icon={'cloud-upload'}
+											icon="cloud-upload"
 										>
-											Upload Client Image
+											{__(
+												'Upload Photo',
+												'bdt-review-blocks'
+											)}
 										</Button>
 									)}
 								/>
@@ -102,31 +108,31 @@ export default function Edit(props) {
 							<div className="bdt-content">
 								<RichText
 									tagName={titleTag}
-									className={'bdt-name'}
+									className="bdt-name"
 									value={clientName}
 									onChange={(value) =>
 										setAttributes({ clientName: value })
 									}
 									placeholder={__(
-										'Write client name',
+										'Name…',
 										'bdt-review-blocks'
 									)}
 								/>
 								<RichText
 									tagName="span"
-									className={'bdt-designation'}
+									className="bdt-designation"
 									value={clientDesg}
 									onChange={(value) =>
 										setAttributes({ clientDesg: value })
 									}
 									placeholder={__(
-										'Write your designation',
+										'Designation…',
 										'bdt-review-blocks'
 									)}
 								/>
 								<RichText
 									tagName="p"
-									className={'bdt-desc'}
+									className="bdt-desc"
 									value={clientComment}
 									onChange={(value) =>
 										setAttributes({ clientComment: value })

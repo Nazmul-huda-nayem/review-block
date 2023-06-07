@@ -15,7 +15,6 @@ import attributes from './attributes';
 /**
  * Block Registration
  */
-
 registerBlockType(metadata, {
 	icon: {
 		src: (

@@ -37,9 +37,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 		descriptionColor,
 		designationColor,
 		boxBgColor,
-		titleHoverColor,
-		descriptionHoverColor,
-		designationHoverColor,
 		boxBgHoverColor,
 		activeRatingColor,
 		inactiveRatingColor,
@@ -72,6 +69,37 @@ const Inspector = ({ attributes, setAttributes }) => {
 							},
 						]}
 						onChange={(size) => setAttributes({ style: size })}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Column Settings', 'bdt-review-blocks')}
+					initialOpen={false}
+				>
+					<ResRangleControl
+						label={__('Column Number', 'bdt-review-blocks')}
+						controlName={GRID_COLUMNS}
+						objAttrs={objAttrs}
+						noUnits={true}
+						min={1}
+						max={4}
+					/>
+					<CardDivider />
+					<ResRangleControl
+						label={__('Column Gap', 'bdt-review-blocks')}
+						controlName={GRID_GAP}
+						objAttrs={objAttrs}
+						noUnits={false}
+						min={0}
+						max={100}
+					/>
+					<CardDivider />
+					<ResRangleControl
+						label={__('Row Gap', 'bdt-review-blocks')}
+						controlName={ROW_GAP}
+						objAttrs={objAttrs}
+						noUnits={false}
+						min={0}
+						max={100}
 					/>
 				</PanelBody>
 				<PanelBody
@@ -125,37 +153,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Column Settings', 'bdt-review-blocks')}
-					initialOpen={false}
-				>
-					<ResRangleControl
-						label={__('Column Number', 'bdt-review-blocks')}
-						controlName={GRID_COLUMNS}
-						objAttrs={objAttrs}
-						noUnits={true}
-						min={1}
-						max={4}
-					/>
-					<CardDivider />
-					<ResRangleControl
-						label={__('Column Gap', 'bdt-review-blocks')}
-						controlName={GRID_GAP}
-						objAttrs={objAttrs}
-						noUnits={false}
-						min={0}
-						max={100}
-					/>
-					<CardDivider />
-					<ResRangleControl
-						label={__('Row Gap', 'bdt-review-blocks')}
-						controlName={ROW_GAP}
-						objAttrs={objAttrs}
-						noUnits={false}
-						min={0}
-						max={100}
-					/>
-				</PanelBody>
-				<PanelBody
 					title={__('Image Settings', 'bdt-review-blocks')}
 					initialOpen={false}
 				>
@@ -205,69 +202,24 @@ const Inspector = ({ attributes, setAttributes }) => {
 						setAttributes={setAttributes}
 						options={aligns}
 					/>
-					<TabPanelControl
-						normalComponents={
-							<Fragment>
-								<ColorControl
-									label={__(
-										'Title Color',
-										'bdt-review-blocks'
-									)}
-									color={titleColor}
-									colorName="titleColor"
-									onChange={setAttributes}
-								/>
-								<ColorControl
-									label={__(
-										'Designation Color',
-										'bdt-review-blocks'
-									)}
-									color={designationColor}
-									colorName="designationColor"
-									onChange={setAttributes}
-								/>
-								<ColorControl
-									label={__(
-										'Description Color',
-										'bdt-review-blocks'
-									)}
-									color={descriptionColor}
-									colorName="descriptionColor"
-									onChange={setAttributes}
-								/>
-							</Fragment>
-						}
-						hoverComponents={
-							<Fragment>
-								<ColorControl
-									label={__(
-										'Title Color',
-										'bdt-review-blocks'
-									)}
-									color={titleHoverColor}
-									colorName="titleHoverColor"
-									onChange={setAttributes}
-								/>
-								<ColorControl
-									label={__(
-										'Designation Color',
-										'bdt-review-blocks'
-									)}
-									color={designationHoverColor}
-									colorName="designationHoverColor"
-									onChange={setAttributes}
-								/>
-								<ColorControl
-									label={__(
-										'Description Color',
-										'bdt-review-blocks'
-									)}
-									color={descriptionHoverColor}
-									colorName="descriptionHoverColor"
-									onChange={setAttributes}
-								/>
-							</Fragment>
-						}
+					<CardDivider />
+					<ColorControl
+						label={__('Title Color', 'bdt-review-blocks')}
+						color={titleColor}
+						colorName="titleColor"
+						onChange={setAttributes}
+					/>
+					<ColorControl
+						label={__('Designation Color', 'bdt-review-blocks')}
+						color={designationColor}
+						colorName="designationColor"
+						onChange={setAttributes}
+					/>
+					<ColorControl
+						label={__('Description Color', 'bdt-review-blocks')}
+						color={descriptionColor}
+						colorName="descriptionColor"
+						onChange={setAttributes}
 					/>
 				</PanelBody>
 				<PanelBody

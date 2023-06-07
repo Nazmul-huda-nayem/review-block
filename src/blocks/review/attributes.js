@@ -32,9 +32,6 @@ const attributes = {
 	titleColor: {
 		type: 'string',
 	},
-	titleHoverColor: {
-		type: 'string',
-	},
 	description: {
 		type: 'string',
 	},
@@ -45,12 +42,6 @@ const attributes = {
 		type: 'string',
 	},
 	boxBgColor: {
-		type: 'string',
-	},
-	designationHoverColor: {
-		type: 'string',
-	},
-	descriptionHoverColor: {
 		type: 'string',
 	},
 	boxBgHoverColor: {
@@ -116,27 +107,15 @@ const attributes = {
 	}),
 	...generateResRangleControlAttributes({
 		controlName: IMAGE_SIZE,
-		defaults: {
-			[`${IMAGE_SIZE}DeskRange`]: '',
-			[`${IMAGE_SIZE}TabRange`]: '',
-			[`${IMAGE_SIZE}MobRange`]: '',
-		},
+		defaults: {},
 	}),
 	...generateResRangleControlAttributes({
 		controlName: ITEM_PADDING,
-		defaults: {
-			[`${ITEM_PADDING}DeskRange`]: '',
-			[`${ITEM_PADDING}TabRange`]: '',
-			[`${ITEM_PADDING}MobRange`]: '',
-		},
+		defaults: {},
 	}),
 	...generateResRangleControlAttributes({
 		controlName: ITEM_BORDER_RADIUS,
-		defaults: {
-			[`${ITEM_BORDER_RADIUS}DeskRange`]: '',
-			[`${ITEM_BORDER_RADIUS}TabRange`]: '',
-			[`${ITEM_BORDER_RADIUS}MobRange`]: '',
-		},
+		defaults: {},
 	}),
 };
 

@@ -7,7 +7,7 @@ const attributes = {
 		type: 'string',
 	},
 	titleTag: {
-		type: 'string'
+		type: 'string',
 	},
 	titleColor: {
 		type: 'string',
@@ -23,16 +23,12 @@ const attributes = {
 	},
 	clientName: {
 		type: 'string',
-		default: 'Asikur Rahman',
 	},
 	clientDesg: {
 		type: 'string',
-		default: 'Web Developer',
 	},
 	clientComment: {
 		type: 'string',
-		default:
-			'Type here some info about this team member, the man very important person of our company.',
 	},
 	showRating: {
 		type: 'boolean',

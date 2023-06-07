@@ -1,5 +1,7 @@
+/**
+ * WordPress dependencies
+ */
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-
 const { Fragment, useEffect } = wp.element;
 
 // editor style
@@ -30,11 +32,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		uniqueId,
 		blockStyle,
 		titleColor,
-		titleHoverColor,
 		descriptionColor,
 		designationColor,
-		descriptionHoverColor,
-		designationHoverColor,
 		boxBgColor,
 		boxBgHoverColor,
 		activeRatingColor,
@@ -44,11 +43,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
 	// unique id
 	useEffect(() => {
-		if (!uniqueId) {
-			setAttributes({
-				uniqueId: `bdt-review-blocks-${clientId.slice(0, 8)}`,
-			});
-		}
+		setAttributes({
+			uniqueId: `bdt-review-blocks-${clientId.slice(0, 8)}`,
+		});
 	}, []);
 
 	// function to convert object to css
@@ -179,13 +176,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				: ' '
 		}
 		${
-			titleHoverColor !== undefined && titleHoverColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-name:hover {
-				color: ${titleHoverColor};
-			}`
-				: ' '
-		}
-		${
 			designationColor !== undefined && designationColor !== ''
 				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-designation{
 				color: ${designationColor};
@@ -193,23 +183,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				: ' '
 		}
 		${
-			designationHoverColor !== undefined && designationHoverColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-designation:hover {
-				color: ${designationHoverColor};
-			}`
-				: ' '
-		}
-		${
 			descriptionColor !== undefined && descriptionColor !== ''
 				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc {
 				color: ${descriptionColor};
-			}`
-				: ' '
-		}
-		${
-			descriptionHoverColor !== undefined && descriptionHoverColor !== ''
-				? `.${uniqueId} .wp-block-bdt-review-item .bdt-content .bdt-desc:hover {
-				color: ${descriptionHoverColor};
 			}`
 				: ' '
 		}

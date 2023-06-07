@@ -4,7 +4,7 @@
 	"version": "0.1.0",
 	"title": "Review Item",
 	"category": "bdt-blocks",
-	"description": "Simple bootstrap block description.",
+	"description": "Review child block",
 	"parent": ["bdt/review"],
 	"usesContext": ["bdt/style"],
 	"supports": {

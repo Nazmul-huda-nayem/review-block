@@ -1,7 +1,6 @@
 /*
 * Style Works for Editor Only
 */
-
 .bdt-tab-panel {
 	margin-top: 20px;
 	.bdt-tab {
@@ -21,32 +20,34 @@
 }
 
 .wp-block-bdt-review {
-	display: inherit;
+	display: block;
 	.block-editor-block-list__layout {
-		position: relative;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		margin: auto;
 		gap: 20px;
-		min-width: 1px;
 	}
 
-	.block-editor-button-block-appender {
-		&::before {
-			content: "Add Item";
-			font-weight: 600;
-			font-size: 16px;
+	.block-list-appender {
+		position: relative !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.block-editor-button-block-appender {
+			background: #017cba;
+			color: #fff;
+			box-shadow: none;
+			&::before {
+				content: "Add Review Item";
+				font-weight: 500;
+				font-size: 16px;
+			}
+			svg {
+				display: none;
+			}
+			.bdt-review-icon {
+				color: unset;
+			}
 		}
-		svg {
-			display: none;
-		}
-		.bdt-review-icon {
-			color: unset;
-		}
-	}
-
-	.wp-block-bdt-review-item {
-		min-width: 1px;
 	}
 
 	.react-rater-star.is-active,
@@ -142,9 +143,4 @@
 
 .res-controls .components-base-control {
 	margin-bottom: 0px !important;
-}
-.block-editor-button-block-appender.components-button {
-	padding: 12px;
-	border-radius: 5px;
-	background: #ddd;
 }

@@ -4,15 +4,23 @@
 	"version": "0.1.0",
 	"title": "Review",
 	"category": "bdt-blocks",
-	"description": "Simple bootstrap block description.",
-	"supports": {
-		"html": false,
-		"anchor": true
-	},
-	"textdomain": "bdt-review-blocks",
+	"description": "Review grid block",
 	"providesContext": {
 		"bdt/style": "style"
 	},
+	"example": [
+		{
+			"attributes": {
+				"style": "style-1"
+			}
+		}
+	],
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": ["full", "wide"]
+	},
+	"textdomain": "bdt-review-blocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"
