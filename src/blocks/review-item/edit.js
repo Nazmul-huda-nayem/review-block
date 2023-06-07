@@ -138,7 +138,7 @@ export default function Edit(props) {
 										setAttributes({ clientComment: value })
 									}
 									placeholder={__(
-										'Write client comment',
+										'Message…',
 										'bdt-review-blocks'
 									)}
 								/>
