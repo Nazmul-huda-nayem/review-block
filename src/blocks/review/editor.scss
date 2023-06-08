@@ -21,6 +21,13 @@
 
 .wp-block-bdt-review {
 	display: block;
+
+	[data-type="bdt/review-item"] {
+		width: 100%;
+		box-sizing: border-box;
+		max-width: 100% !important;
+	}
+
 	.block-editor-block-list__layout {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
